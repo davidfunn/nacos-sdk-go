@@ -117,4 +117,7 @@ type INamingClient interface {
 
 	//CloseClient close the GRPC client
 	CloseClient()
+
+	//RefreshServerToken use to auth
+	RefreshServerToken(token string)
 }

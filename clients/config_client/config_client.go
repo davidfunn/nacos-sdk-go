@@ -362,6 +362,10 @@ func (client *ConfigClient) CloseClient() {
 	client.cancel()
 }
 
+func (client *ConfigClient) RefreshServerToken(token string) {
+	client.configProxy.RefreshToken(token)
+}
+
 func (client *ConfigClient) searchConfigInner(param vo.SearchConfigParam) (*model.ConfigPage, error) {
 	if param.Search != "accurate" && param.Search != "blur" {
 		return nil, errors.New("[client.searchConfigInner] param.search must be accurate or blur")

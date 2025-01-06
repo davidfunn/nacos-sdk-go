@@ -131,3 +131,7 @@ func (proxy *NamingProxyDelegate) Unsubscribe(serviceName, groupName, clusters s
 func (proxy *NamingProxyDelegate) CloseClient() {
 	proxy.grpcClientProxy.CloseClient()
 }
+
+func (proxy *NamingProxyDelegate) RefreshToken(token string) {
+	proxy.grpcClientProxy.RefreshToken(token)
+}

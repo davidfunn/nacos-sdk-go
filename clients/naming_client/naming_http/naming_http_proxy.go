@@ -216,3 +216,7 @@ func (proxy *NamingHttpProxy) Unsubscribe(serviceName, groupName, clusters strin
 func (proxy *NamingHttpProxy) CloseClient() {
 
 }
+
+func (proxy *NamingHttpProxy) RefreshToken(token string) {
+	proxy.nacosServer.RefreshToken(token)
+}

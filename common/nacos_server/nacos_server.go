@@ -99,7 +99,17 @@ func NewNacosServer(ctx context.Context, serverList []constant.ServerConfig, cli
 	}
 
 	ns.securityLogin.AutoRefresh(ctx)
+
+	if securityLogin.StoreConfigurationToken() {
+		logger.Info("use client configuration token")
+	}
 	return &ns, nil
+}
+
+func (server *NacosServer) RefreshToken(token string) {
+	if server.securityLogin.RefreshToken(token) {
+		logger.Info("refresh token")
+	}
 }
 
 func (server *NacosServer) callConfigServer(api string, params map[string]string, newHeaders map[string]string,

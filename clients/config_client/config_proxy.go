@@ -213,3 +213,7 @@ func (c *ConfigChangeNotifyRequestHandler) RequestReply(request rpc_request.IReq
 		Response: &rpc_response.Response{ResultCode: constant.RESPONSE_CODE_SUCCESS},
 	}
 }
+
+func (cp *ConfigProxy) RefreshToken(token string) {
+	cp.nacosServer.RefreshToken(token)
+}

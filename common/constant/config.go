@@ -47,6 +47,7 @@ type ClientConfig struct {
 	UpdateCacheWhenEmpty bool                     // update cache when get empty service instance from server
 	Username             string                   // the username for nacos auth
 	Password             string                   // the password for nacos auth
+	Token                string                   // the token for nacos auth
 	LogDir               string                   // the directory for log, default is current path
 	LogLevel             string                   // the level of log, it's must be debug,info,warn,error, default value is info
 	ContextPath          string                   // the nacos server contextpath

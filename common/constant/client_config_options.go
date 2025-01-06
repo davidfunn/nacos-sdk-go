@@ -192,6 +192,13 @@ func WithPassword(password string) ClientOption {
 	}
 }
 
+// WithToken ...
+func WithToken(token string) ClientOption {
+	return func(config *ClientConfig) {
+		config.Token = token
+	}
+}
+
 // WithLogDir ...
 func WithLogDir(logDir string) ClientOption {
 	return func(config *ClientConfig) {

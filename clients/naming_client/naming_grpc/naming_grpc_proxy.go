@@ -202,3 +202,7 @@ func (proxy *NamingGrpcProxy) CloseClient() {
 	logger.Info("Close Nacos Go SDK Client...")
 	proxy.rpcClient.GetRpcClient().Shutdown()
 }
+
+func (proxy *NamingGrpcProxy) RefreshToken(token string) {
+	proxy.nacosServer.RefreshToken(token)
+}

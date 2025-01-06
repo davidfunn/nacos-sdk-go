@@ -39,4 +39,6 @@ type INamingProxy interface {
 	Unsubscribe(serviceName, groupName, clusters string) error
 
 	CloseClient()
+
+	RefreshToken(token string)
 }

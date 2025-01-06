@@ -353,3 +353,7 @@ func (sc *NamingClient) CloseClient() {
 	sc.serviceProxy.CloseClient()
 	sc.cancel()
 }
+
+func (sc *NamingClient) RefreshServerToken(token string) {
+	sc.serviceProxy.RefreshToken(token)
+}

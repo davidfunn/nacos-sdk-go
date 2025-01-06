@@ -180,3 +180,20 @@ func (ac *AuthClient) login(server constant.ServerConfig) (bool, error) {
 	return true, nil
 
 }
+
+func (ac *AuthClient) StoreConfigurationToken() bool {
+	client := ac.clientCfg
+	if client.Token != "" {
+		ac.accessToken.Store(client.Token)
+		return true
+	}
+	return false
+}
+
+func (ac *AuthClient) RefreshToken(token string) bool {
+	if token != "" {
+		ac.accessToken.Store(token)
+		return true
+	}
+	return false
+}

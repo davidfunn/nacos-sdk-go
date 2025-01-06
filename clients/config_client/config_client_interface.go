@@ -67,4 +67,7 @@ type IConfigClient interface {
 
 	// CloseClient Close the GRPC client
 	CloseClient()
+
+	//RefreshServerToken use to auth
+	RefreshServerToken(token string)
 }
